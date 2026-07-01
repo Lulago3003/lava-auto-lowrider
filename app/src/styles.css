@@ -6,6 +6,103 @@
 
 @custom-variant dark (&:where([data-theme="default-dark"], [data-theme="default-dark"] *));
 
+/* ---------------------------------------------------------------------- */
+/* Lava Auto Lowrider — brand layer. Marketing page chrome (everything    */
+/* under app/src/components/site/**) uses ONLY these tokens, never the    */
+/* q-* / hf-color-* Quanta system, which stays reserved for the app shell */
+/* (404/error boundaries in __root.tsx).                                 */
+/* ---------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/oswald-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/plusjakartasans-latin.woff2") format("woff2");
+}
+
+@theme {
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-lowrider-black: #0b0b0d;
+  --color-lowrider-charcoal: #16161a;
+  --color-lowrider-asphalt: #202024;
+  --color-lowrider-line: #2c2c31;
+  --color-lowrider-yellow: #ffc400;
+  --color-lowrider-yellow-soft: #ffd84d;
+  --color-lowrider-yellow-deep: #e0a500;
+  --color-lowrider-cream: #f5f1e6;
+  --color-lowrider-chrome: #c7cad1;
+
+  --animate-marquee: marquee 26s linear infinite;
+  --animate-glow-pulse: glow-pulse 3.2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .animate-marquee,
+  .animate-glow-pulse,
+  .animate-float {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /*
  * Quanta is the visual source of truth. This file imports Quanta's Tailwind
  * entry once; that entry brings in primitives, semantic theme variables,
@@ -92,5 +189,67 @@
 
   * {
     border-color: var(--hf-color-border-default);
+  }
+}
+
+/* Marketing page chrome — scoped under [data-site], isolated from the
+   Quanta-themed app shell (404 / error boundary) elsewhere in the tree. */
+@layer components {
+  [data-site] {
+    font-family: var(--font-body);
+    background-color: var(--color-lowrider-black);
+    color: var(--color-lowrider-cream);
+  }
+
+  [data-site] [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-site] [data-reveal="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-site] .text-shine {
+    background: linear-gradient(
+      100deg,
+      var(--color-lowrider-yellow-deep) 20%,
+      var(--color-lowrider-yellow-soft) 40%,
+      #fff8dd 50%,
+      var(--color-lowrider-yellow-soft) 60%,
+      var(--color-lowrider-yellow-deep) 80%
+    );
+    background-size: 220% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite;
+  }
+
+  [data-site] .grain-surface {
+    position: relative;
+    isolation: isolate;
+  }
+
+  [data-site] .grain-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(var(--color-lowrider-chrome) 0.6px, transparent 0.6px);
+    background-size: 3px 3px;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: -220% 0;
   }
 }

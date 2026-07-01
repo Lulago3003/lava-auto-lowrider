@@ -1,28 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "../components/site/Header";
+import { Hero } from "../components/site/Hero";
+import { Marquee } from "../components/site/Marquee";
+import { Services } from "../components/site/Services";
+import { Memberships } from "../components/site/Memberships";
+import { BarberCrossPromo } from "../components/site/BarberCrossPromo";
+import { Features } from "../components/site/Features";
+import { GoogleRating } from "../components/site/GoogleRating";
+import { Location } from "../components/site/Location";
+import { CtaBand } from "../components/site/CtaBand";
+import { Footer } from "../components/site/Footer";
+import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 
 export const Route = createFileRoute("/")({
-  // No title/description here on purpose: the home page inherits the app's
-  // editable page metadata from the root route (set via the marketplace meta
-  // API — title/favicon/og), so a shared link to "/" shows the owner's values.
-  // Add a `head` here only to give a SPECIFIC page its own title/description
-  // (a deeper route's head overrides the root's for that page).
   component: Index,
 });
 
-// Replace this placeholder. Routes are server-rendered — keep render SSR-safe
-// (no window/document at module top level or during render). See ./README.md.
+const MARQUEE_ITEMS = [
+  "Lavado Básico",
+  "Encerado y Brillo",
+  "Detailing Lowrider",
+  "Membresías Mensuales",
+  "Barbería al Lado",
+];
+
 function Index() {
   return (
-    <div
-      data-higgsfield-blank-page-placeholder="REMOVE_THIS"
-      className="flex min-h-screen flex-col items-center justify-center gap-3 px-6 text-center"
-    >
-      <h1 className="text-2xl font-semibold tracking-tight">
-        Your website will live here.
-      </h1>
-      <p className="text-base text-gray-500">
-        Ask Higgsfield Supercomputer to build it.
-      </p>
+    <div data-site className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <Marquee items={MARQUEE_ITEMS} />
+        <Services />
+        <Memberships />
+        <BarberCrossPromo />
+        <Features />
+        <GoogleRating />
+        <Location />
+        <CtaBand />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
