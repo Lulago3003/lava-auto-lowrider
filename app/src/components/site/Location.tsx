@@ -2,10 +2,11 @@ import { Clock, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import {
   ADDRESS_LINE,
-  MAPS_DIRECTIONS_URL,
   MAPS_EMBED_SRC,
+  MAPS_NAVIGATE_URL,
   PHONE_DISPLAY,
   PHONE_TEL,
+  WAZE_URL,
   WHATSAPP_URL,
 } from "../../lib/site-content";
 
@@ -60,13 +61,22 @@ export function Location() {
               WhatsApp
             </a>
             <a
-              href={MAPS_DIRECTIONS_URL}
+              href={MAPS_NAVIGATE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-lowrider-cream/28 px-6 font-display text-sm font-semibold tracking-wide text-lowrider-cream uppercase transition-colors hover:border-lowrider-yellow hover:text-lowrider-yellow"
             >
               <Navigation className="h-4 w-4" strokeWidth={2.2} />
-              Cómo llegar
+              Ir con Google Maps
+            </a>
+            <a
+              href={WAZE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#33ccff] px-6 font-display text-sm font-semibold tracking-wide text-lowrider-blue-deep uppercase transition-transform hover:scale-[1.03] active:scale-95"
+            >
+              <Navigation className="h-4 w-4" strokeWidth={2.2} />
+              Ir con Waze
             </a>
           </div>
         </Reveal>

@@ -3,6 +3,7 @@ import { Header } from "../components/site/Header";
 import { Hero } from "../components/site/Hero";
 import { Marquee } from "../components/site/Marquee";
 import { Services } from "../components/site/Services";
+import { WhileYouWait } from "../components/site/WhileYouWait";
 import { Memberships } from "../components/site/Memberships";
 import { ProofGallery } from "../components/site/ProofGallery";
 import { Features } from "../components/site/Features";
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/")({
 const MARQUEE_ITEMS = [
   "Lavado con espuma",
   "Brillo exterior",
+  "Barbería al lado",
   "Interior aspirado",
   "Motor presentable",
   "Agenda por WhatsApp",
@@ -51,6 +53,7 @@ function Index() {
         <Hero />
         <Marquee items={MARQUEE_ITEMS} />
         <Services />
+        <WhileYouWait />
         <Memberships />
         <ProofGallery />
         <Features />

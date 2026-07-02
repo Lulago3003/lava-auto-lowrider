@@ -1,11 +1,6 @@
-import { Camera, Clock, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
+import { Camera, Clock, MapPin, MessageCircle, Navigation } from "lucide-react";
 import { Reveal } from "./Reveal";
-import {
-  MAPS_DIRECTIONS_URL,
-  PHONE_TEL,
-  SITE_IMAGES,
-  WHATSAPP_URL,
-} from "../../lib/site-content";
+import { MAPS_NAVIGATE_URL, SITE_IMAGES, WAZE_URL, WHATSAPP_URL } from "../../lib/site-content";
 
 export function Hero() {
   return (
@@ -50,7 +45,8 @@ export function Hero() {
             className="mt-6 max-w-2xl font-body text-lg leading-8 text-lowrider-cream/84 sm:text-xl"
           >
             En Lava Auto Lowrider el carro entra sucio y sale con presencia: espuma intensa,
-            llantas con brillo, interior atendido y contacto directo por WhatsApp.
+            llantas con brillo e interior atendido. Y mientras esperas, córtate el cabello en la
+            barbería de al lado o come algo cerca. Todo en una sola parada.
           </Reveal>
 
           <Reveal delayMs={240} className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -64,20 +60,22 @@ export function Hero() {
               Agendar por WhatsApp
             </a>
             <a
-              href={MAPS_DIRECTIONS_URL}
+              href={MAPS_NAVIGATE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border-2 border-lowrider-cream/40 bg-lowrider-blue-deep/35 px-7 font-display text-base font-semibold tracking-wide text-lowrider-cream uppercase backdrop-blur transition-colors hover:border-lowrider-yellow hover:text-lowrider-yellow"
             >
               <Navigation className="h-5 w-5" strokeWidth={2.3} />
-              Cómo llegar
+              Google Maps
             </a>
             <a
-              href={`tel:${PHONE_TEL}`}
+              href={WAZE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border-2 border-lowrider-cream/25 px-7 font-display text-base font-semibold tracking-wide text-lowrider-cream uppercase transition-colors hover:border-lowrider-yellow hover:text-lowrider-yellow"
             >
-              <Phone className="h-5 w-5" strokeWidth={2.3} />
-              Llamar
+              <Navigation className="h-5 w-5" strokeWidth={2.3} />
+              Waze
             </a>
           </Reveal>
         </div>
@@ -113,9 +111,9 @@ export function Hero() {
               <MapPin className="h-5 w-5" strokeWidth={2.1} />
             </span>
             <div>
-              <p className="font-display text-2xl font-bold leading-none">Local real</p>
+              <p className="font-display text-2xl font-bold leading-none">Barbería al lado</p>
               <p className="mt-1 font-body text-xs font-semibold text-lowrider-blue-deep/60">
-                foto, mapa y contacto en un solo lugar
+                córtate mientras lavamos tu carro
               </p>
             </div>
           </div>

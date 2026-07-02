@@ -6,7 +6,7 @@
     <title>Lava Auto Lowrider | Carwash en Arraij&aacute;n</title>
     <meta
       name="description"
-      content="Lavado, brillo, detailing y atenci&oacute;n directa por WhatsApp en Lava Auto Lowrider, Arraij&aacute;n, Panam&aacute; Oeste."
+      content="Lavado, brillo y detailing en Lava Auto Lowrider, Arraij&aacute;n. Barber&iacute;a al lado y comida cerca mientras esperas. Agenda por WhatsApp y llega con Waze o Google Maps."
     />
     <meta property="og:title" content="Lava Auto Lowrider | Carwash en Arraij&aacute;n" />
     <meta
@@ -748,6 +748,135 @@
         line-height: 1.7;
       }
 
+      .wait-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .wait-card {
+        position: relative;
+        display: flex;
+        min-height: 300px;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 18px 48px rgba(6, 39, 95, 0.1);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease;
+      }
+
+      .wait-card:hover {
+        border-color: rgba(9, 85, 184, 0.4);
+        box-shadow: 0 26px 64px rgba(6, 39, 95, 0.16);
+        transform: translateY(-6px);
+      }
+
+      .wait-card.gold {
+        border: 2px solid var(--yellow);
+        background: var(--blue-deep);
+        color: var(--cream);
+      }
+
+      .wait-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        background: var(--yellow);
+        color: var(--blue-deep);
+        font-family: "Oswald", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .wait-card h3 {
+        margin-top: 20px;
+        font-size: 27px;
+        line-height: 1;
+      }
+
+      .wait-card p {
+        color: rgba(6, 39, 95, 0.72);
+        font-size: 14.5px;
+        line-height: 1.65;
+      }
+
+      .wait-card.gold p {
+        color: rgba(247, 243, 231, 0.78);
+      }
+
+      .wait-tag {
+        display: inline-flex;
+        width: fit-content;
+        margin-top: 18px;
+        border-radius: 999px;
+        background: rgba(9, 85, 184, 0.1);
+        padding: 6px 14px;
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .wait-card.gold .wait-tag {
+        background: rgba(255, 210, 31, 0.16);
+        color: var(--yellow);
+      }
+
+      .nav-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .pill-waze {
+        background: #33ccff;
+        color: #06275f;
+        box-shadow: 0 18px 42px rgba(51, 204, 255, 0.24);
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 40;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 54px;
+        padding: 0 22px 0 16px;
+        border-radius: 999px;
+        background: #25d366;
+        color: #fff;
+        font-family: "Oswald", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 20px 52px rgba(8, 16, 31, 0.35);
+        transition: transform 180ms ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: translateY(-3px) scale(1.03);
+      }
+
+      .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+
       footer {
         background: var(--blue-deep);
         color: rgba(247, 243, 231, 0.72);
@@ -777,8 +906,21 @@
         .gallery-grid,
         .features,
         .proof-grid,
-        .location-grid {
+        .location-grid,
+        .wait-cards {
           grid-template-columns: 1fr;
+        }
+
+        .wait-card {
+          min-height: auto;
+        }
+
+        .whatsapp-float span {
+          display: none;
+        }
+
+        .whatsapp-float {
+          padding: 0 16px;
         }
 
         .proof-cards {
@@ -893,6 +1035,7 @@
         <a class="brand" href="#top"><span class="brand-mark">L</span> Lava Auto <strong>Lowrider</strong></a>
         <div class="nav-links">
           <a href="#servicios">Servicios</a>
+          <a href="#mientras-esperas">Ventajas</a>
           <a href="#planes">Planes</a>
           <a href="#galeria">Galer&iacute;a</a>
           <a href="#ubicacion">Ubicaci&oacute;n</a>
@@ -910,17 +1053,18 @@
           <h1>Lavado fuerte. Brillo de calle.</h1>
           <p class="lead">
             En Lava Auto Lowrider el carro entra sucio y sale con presencia: espuma intensa,
-            llantas con brillo, interior atendido y contacto directo por WhatsApp.
+            llantas con brillo e interior atendido. Y mientras esperas, c&oacute;rtate el cabello
+            en la barber&iacute;a de al lado o come algo cerca. Todo en una sola parada.
           </p>
           <div class="hero-actions">
             <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">Agendar por WhatsApp</a>
-            <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">C&oacute;mo llegar</a>
-            <a class="pill pill-outline" href="tel:+5073896698">Llamar</a>
+            <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">Google Maps</a>
+            <a class="pill pill-outline" href="https://waze.com/ul?ll=8.9391428,-79.64208&amp;navigate=yes">Waze</a>
           </div>
           <div class="trust">
             <div class="trust-item"><div class="trust-title">Fotos reales</div><small>local, espuma y motor visibles</small></div>
+            <div class="trust-item"><div class="trust-title">Barber&iacute;a al lado</div><small>c&oacute;rtate mientras lavamos tu carro</small></div>
             <div class="trust-item"><div class="trust-title">Turno r&aacute;pido</div><small>confirma por WhatsApp antes de llegar</small></div>
-            <div class="trust-item"><div class="trust-title">Local real</div><small>foto, mapa y contacto en un solo lugar</small></div>
           </div>
         </div>
         <div class="hero-corner" aria-hidden="true"><span>Desde $5</span><strong>agenda hoy</strong></div>
@@ -928,8 +1072,8 @@
 
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
-          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
+          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Barber&iacute;a al lado</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
+          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Barber&iacute;a al lado</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
         </div>
       </div>
 
@@ -958,6 +1102,44 @@
             <article class="service">
               <img src="images/motor.png" alt="Motor limpio de vehiculo" />
               <div class="service-body"><span class="price">Desde $25</span><h3>Detailing Lowrider</h3><p>Limpieza profunda, motor presentable y detalles para carros exigentes.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="mientras-esperas" class="cream grid-bg">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="label">Mientras esperas</span>
+              <h2>Tu carro se lava. T&uacute; no pierdes el tiempo.</h2>
+            </div>
+            <p>Esto no es solo un lavado: es una parada completa. Deja el carro en buenas manos y aprovecha todo lo que hay a pasos del local.</p>
+          </div>
+          <div class="wait-cards">
+            <article class="wait-card gold">
+              <div>
+                <span class="wait-num">1</span>
+                <h3>Barber&iacute;a al lado</h3>
+                <p>Justo al lado del lavado est&aacute; la barber&iacute;a del barrio. Entra, c&oacute;rtate el cabello o arregla la barba, y cuando salgas tu carro te espera brillando. Sales renovado t&uacute; y tu carro.</p>
+              </div>
+              <span class="wait-tag">El combo favorito</span>
+            </article>
+            <article class="wait-card">
+              <div>
+                <span class="wait-num">2</span>
+                <h3>Entretenimiento en espera</h3>
+                <p>Zona para esperar tranquilo: si&eacute;ntate, revisa el tel&eacute;fono, conversa o mira c&oacute;mo dejamos tu carro. La espera se pasa r&aacute;pido y siempre hay ambiente de barrio.</p>
+              </div>
+              <span class="wait-tag">Espera sin estr&eacute;s</span>
+            </article>
+            <article class="wait-card">
+              <div>
+                <span class="wait-num">3</span>
+                <h3>Comida a pasos</h3>
+                <p>&iquest;Te agarr&oacute; el hambre? Hay opciones de comida cerca del local para que aproveches: llegas, pides tu lavado, comes algo y regresas justo cuando tu carro est&aacute; listo.</p>
+              </div>
+              <span class="wait-tag">Sin moverte de la zona</span>
             </article>
           </div>
         </div>
@@ -999,8 +1181,8 @@
           <span class="label">Por qu&eacute; funciona</span>
           <h2>La confianza est&aacute; en los detalles.</h2>
           <div class="features">
-            <article class="feature"><h3>Local visible</h3><p>Entrada directa, letrero grande y punto f&aacute;cil de reconocer en Arraij&aacute;n.</p></article>
-            <article class="feature"><h3>Atenci&oacute;n r&aacute;pida</h3><p>Llegas, preguntas, eliges el servicio y el equipo se mueve sin complicarte.</p></article>
+            <article class="feature"><h3>Local visible</h3><p>Entrada directa, letrero grande y punto f&aacute;cil de reconocer en Arraij&aacute;n. Llegas con Waze o Google Maps sin perderte.</p></article>
+            <article class="feature"><h3>Todo en una parada</h3><p>Barber&iacute;a al lado y comida a pasos: aprovechas la espera y sales con el carro brillando y el look listo.</p></article>
             <article class="feature"><h3>Resultado visible</h3><p>Espuma, llantas, vidrios y pintura trabajados para que el cambio se note.</p></article>
             <article class="feature"><h3>Agenda por WhatsApp</h3><p>Escribe, confirma el horario y llega directo sin vueltas innecesarias.</p></article>
           </div>
@@ -1014,7 +1196,8 @@
             <h2>Ves el local antes de escribir.</h2>
             <p>La confianza viene de lo visible: fotos reales, ubicaci&oacute;n directa en Maps y un contacto que responde sin hacerte perder tiempo.</p>
             <div class="proof-actions">
-              <a class="pill pill-blue" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">Ver ubicaci&oacute;n</a>
+              <a class="pill pill-blue" href="https://www.google.com/maps/dir/?api=1&amp;destination=8.9391428,-79.64208">Google Maps</a>
+              <a class="pill pill-blue" href="https://waze.com/ul?ll=8.9391428,-79.64208&amp;navigate=yes">Waze</a>
               <a class="pill pill-outline" href="tel:+5073896698">Llamar</a>
             </div>
           </div>
@@ -1038,7 +1221,8 @@
             </div>
             <div class="hero-actions">
               <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">WhatsApp</a>
-              <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">C&oacute;mo llegar</a>
+              <a class="pill pill-blue" href="https://www.google.com/maps/dir/?api=1&amp;destination=8.9391428,-79.64208">Ir con Google Maps</a>
+              <a class="pill pill-waze" href="https://waze.com/ul?ll=8.9391428,-79.64208&amp;navigate=yes">Ir con Waze</a>
             </div>
           </div>
           <div class="map">
@@ -1067,5 +1251,14 @@
         <small>&copy; 2026 Lava Auto Lowrider.</small>
       </div>
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro"
+      aria-label="Escr&iacute;benos por WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39a9.87 9.87 0 0 0 4.69 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.11h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+      <span>Agenda ya</span>
+    </a>
   </body>
 </html>

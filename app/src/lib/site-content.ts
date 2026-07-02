@@ -12,6 +12,9 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 export const ADDRESS_LINE = "W9Q5+M53, Calle, Arraiján, Panamá Oeste";
 export const MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z";
+export const MAPS_NAVIGATE_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=8.9391428,-79.64208";
+export const WAZE_URL = "https://waze.com/ul?ll=8.9391428,-79.64208&navigate=yes";
 export const MAPS_EMBED_SRC = "https://www.google.com/maps?q=8.9391428,-79.64208&z=18&output=embed";
 
 export const SITE_IMAGES = {
@@ -83,11 +86,13 @@ export const MEMBERSHIPS = [
 export const FEATURES = [
   {
     title: "Local visible",
-    description: "Entrada directa, letrero grande y punto fácil de reconocer en Arraiján.",
+    description:
+      "Entrada directa, letrero grande y punto fácil de reconocer en Arraiján. Llegas con Waze o Google Maps sin perderte.",
   },
   {
-    title: "Atención rápida",
-    description: "Llegas, preguntas, eliges el servicio y el equipo se mueve sin complicarte.",
+    title: "Todo en una parada",
+    description:
+      "Barbería al lado y comida a pasos: aprovechas la espera y sales con el carro brillando y el look listo.",
   },
   {
     title: "Resultado visible",
@@ -96,5 +101,29 @@ export const FEATURES = [
   {
     title: "Agenda por WhatsApp",
     description: "Escribe, confirma el horario y llega directo sin vueltas innecesarias.",
+  },
+] as const;
+
+export const WAIT_PERKS = [
+  {
+    title: "Barbería al lado",
+    tag: "El combo favorito",
+    description:
+      "Justo al lado del lavado está la barbería del barrio. Entra, córtate el cabello o arregla la barba, y cuando salgas tu carro te espera brillando.",
+    highlighted: true,
+  },
+  {
+    title: "Entretenimiento en espera",
+    tag: "Espera sin estrés",
+    description:
+      "Zona para esperar tranquilo: siéntate, revisa el teléfono, conversa o mira cómo dejamos tu carro. La espera se pasa rápido.",
+    highlighted: false,
+  },
+  {
+    title: "Comida a pasos",
+    tag: "Sin moverte de la zona",
+    description:
+      "¿Te agarró el hambre? Hay opciones de comida cerca del local: pides tu lavado, comes algo y regresas justo cuando tu carro está listo.",
+    highlighted: false,
   },
 ] as const;

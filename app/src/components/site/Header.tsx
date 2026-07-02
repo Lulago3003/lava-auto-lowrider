@@ -4,6 +4,7 @@ import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "../../lib/site-content";
 
 const LINKS = [
   { href: "#servicios", label: "Servicios" },
+  { href: "#mientras-esperas", label: "Ventajas" },
   { href: "#membresias", label: "Planes" },
   { href: "#galeria", label: "Galería" },
   { href: "#ubicacion", label: "Ubicación" },
