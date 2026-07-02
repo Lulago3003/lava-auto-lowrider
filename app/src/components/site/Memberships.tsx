@@ -21,7 +21,8 @@ export function Memberships() {
             Que el carro nunca llegue sucio.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-8 text-lowrider-cream/72">
-            Los planes le dan al negocio una razón para que el cliente vuelva cada semana.
+            Para quienes manejan todos los días y quieren mantener el carro limpio sin pensarlo
+            demasiado.
           </p>
         </Reveal>
 

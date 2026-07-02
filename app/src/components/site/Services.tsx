@@ -21,8 +21,8 @@ export function Services() {
             as="p"
             className="max-w-2xl font-body text-lg leading-8 text-lowrider-blue-deep/72"
           >
-            Una página que vende muestra exactamente qué compra el cliente: espuma, detalle,
-            ubicación real y precios de referencia para decidir rápido.
+            Elige un lavado rápido, completo o de mayor detalle. Todo está pensado para que el
+            carro salga limpio, presentable y listo para rodar.
           </Reveal>
         </div>
 

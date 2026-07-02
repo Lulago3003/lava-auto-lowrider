@@ -29,11 +29,11 @@ export function ProofGallery() {
             Prueba visual
           </p>
           <h2 className="mt-3 font-display text-5xl leading-[0.9] font-bold tracking-normal text-lowrider-blue-deep uppercase sm:text-6xl">
-            Que la página venda antes de que pregunten precio.
+            Ves el proceso antes de llegar.
           </h2>
           <p className="mt-6 max-w-md font-body text-lg leading-8 text-lowrider-blue-deep/72">
-            Las fotos reales hacen que el cliente confíe: ve el local, ve el proceso y entiende el
-            acabado que puede esperar.
+            Fotos reales del local y del proceso para que sepas dónde llegas y qué acabado puedes
+            esperar.
           </p>
           <a
             href={WHATSAPP_URL}

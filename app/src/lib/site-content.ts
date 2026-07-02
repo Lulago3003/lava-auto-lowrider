@@ -14,9 +14,6 @@ export const MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z";
 export const MAPS_EMBED_SRC = "https://www.google.com/maps?q=8.9391428,-79.64208&z=18&output=embed";
 
-export const GOOGLE_RATING = 4.0;
-export const GOOGLE_REVIEW_COUNT = 6;
-
 export const SITE_IMAGES = {
   local: "/images/lava-auto-local.png",
   foamDark: "/images/carro-enjabonado.png",

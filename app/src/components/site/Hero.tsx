@@ -1,8 +1,6 @@
-import { Clock, MapPin, MessageCircle, Navigation, Phone, Star } from "lucide-react";
+import { Camera, Clock, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import {
-  GOOGLE_RATING,
-  GOOGLE_REVIEW_COUNT,
   MAPS_DIRECTIONS_URL,
   PHONE_TEL,
   SITE_IMAGES,
@@ -41,9 +39,9 @@ export function Hero() {
           <Reveal
             delayMs={80}
             as="h1"
-            className="mt-7 max-w-4xl font-display text-[clamp(3.35rem,9vw,8.7rem)] leading-[0.86] font-bold tracking-normal uppercase"
+            className="mt-7 max-w-4xl font-display text-[clamp(2.35rem,11vw,4.5rem)] leading-[0.92] font-bold tracking-normal uppercase sm:text-[clamp(3.35rem,9vw,8.7rem)] sm:leading-[0.86]"
           >
-            Lavado que se ve desde la calle
+            Lavado fuerte. Brillo de calle.
           </Reveal>
 
           <Reveal
@@ -51,8 +49,8 @@ export function Hero() {
             as="p"
             className="mt-6 max-w-2xl font-body text-lg leading-8 text-lowrider-cream/84 sm:text-xl"
           >
-            Lava Auto Lowrider convierte una parada rápida en una experiencia clara: espuma intensa,
-            brillo visible y atención directa por WhatsApp o llamada.
+            En Lava Auto Lowrider el carro entra sucio y sale con presencia: espuma intensa,
+            llantas con brillo, interior atendido y contacto directo por WhatsApp.
           </Reveal>
 
           <Reveal delayMs={240} className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -90,14 +88,12 @@ export function Hero() {
         >
           <div className="flex items-center gap-4 border-b border-lowrider-blue/12 p-5 sm:border-r sm:border-b-0">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-lowrider-yellow text-lowrider-blue-deep">
-              <Star className="h-5 w-5 fill-lowrider-blue-deep" strokeWidth={2.1} />
+              <Camera className="h-5 w-5" strokeWidth={2.1} />
             </span>
             <div>
-              <p className="font-display text-2xl font-bold leading-none">
-                {GOOGLE_RATING.toFixed(1)} Google
-              </p>
+              <p className="font-display text-2xl font-bold leading-none">Fotos reales</p>
               <p className="mt-1 font-body text-xs font-semibold text-lowrider-blue-deep/60">
-                {GOOGLE_REVIEW_COUNT} reseñas verificables
+                local, espuma y motor visibles
               </p>
             </div>
           </div>

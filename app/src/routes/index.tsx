@@ -6,7 +6,7 @@ import { Services } from "../components/site/Services";
 import { Memberships } from "../components/site/Memberships";
 import { ProofGallery } from "../components/site/ProofGallery";
 import { Features } from "../components/site/Features";
-import { GoogleRating } from "../components/site/GoogleRating";
+import { ProofBand } from "../components/site/ProofBand";
 import { Location } from "../components/site/Location";
 import { CtaBand } from "../components/site/CtaBand";
 import { Footer } from "../components/site/Footer";
@@ -15,7 +15,6 @@ import { StructuredData } from "../components/StructuredData";
 import {
   ADDRESS_LINE,
   BUSINESS_NAME,
-  GOOGLE_RATING,
   MAPS_DIRECTIONS_URL,
   PHONE_TEL,
   SITE_IMAGES,
@@ -40,11 +39,6 @@ const LOCAL_BUSINESS_JSON = JSON.stringify({
   image: SITE_IMAGES.local,
   telephone: PHONE_TEL,
   address: ADDRESS_LINE,
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: GOOGLE_RATING,
-    reviewCount: 6,
-  },
   url: MAPS_DIRECTIONS_URL,
 });
 
@@ -60,7 +54,7 @@ function Index() {
         <Memberships />
         <ProofGallery />
         <Features />
-        <GoogleRating />
+        <ProofBand />
         <Location />
         <CtaBand />
       </main>

@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { cwd, exit } from "node:process";
 
 const root = cwd();
+const docsIndexPath = join(root, "..", "docs/index.html");
 
 const checks = [
   {
@@ -37,6 +38,19 @@ const checks = [
     name: "primary WhatsApp CTA stays wired",
     pass: () =>
       readFileSync(join(root, "src/components/site/Hero.tsx"), "utf8").includes("WHATSAPP_URL"),
+  },
+  {
+    name: "public page does not show the removed Google score",
+    pass: () => {
+      const docsIndex = readFileSync(docsIndexPath, "utf8");
+      const route = readFileSync(join(root, "src/routes/index.tsx"), "utf8");
+      const hero = readFileSync(join(root, "src/components/site/Hero.tsx"), "utf8");
+      return ![docsIndex, route, hero].some((content) => /4\.0|GOOGLE_RATING|ratingValue/.test(content));
+    },
+  },
+  {
+    name: "public page includes the stronger proof band",
+    pass: () => readFileSync(docsIndexPath, "utf8").includes("Prueba real, no promesa"),
   },
 ];
 

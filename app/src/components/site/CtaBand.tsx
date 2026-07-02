@@ -14,15 +14,15 @@ export function CtaBand() {
           as="h2"
           className="font-display text-5xl leading-[0.9] font-bold tracking-normal uppercase sm:text-7xl"
         >
-          Tu próximo cliente está a un mensaje.
+          Tu carro puede salir brillando hoy.
         </Reveal>
         <Reveal
           delayMs={80}
           as="p"
           className="max-w-2xl font-body text-lg leading-8 text-lowrider-cream/78"
         >
-          Lava Auto Lowrider queda listo para recibir llamadas, visitas y chats desde la misma
-          página.
+          Agenda por WhatsApp, confirma el horario y llega directo a Lava Auto Lowrider en
+          Arraiján.
         </Reveal>
         <Reveal delayMs={160} className="flex flex-col gap-3 sm:flex-row">
           <a
