@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lava Auto Lowrider | Carwash en Arraij&aacute;n</title>
+    <meta
+      name="description"
+      content="Lavado, brillo, detailing y atenci&oacute;n directa por WhatsApp en Lava Auto Lowrider, Arraij&aacute;n, Panam&aacute; Oeste."
+    />
+    <meta property="og:title" content="Lava Auto Lowrider | Carwash en Arraij&aacute;n" />
+    <meta
+      property="og:description"
+      content="Lavado, brillo, detailing y atenci&oacute;n directa por WhatsApp en Lava Auto Lowrider."
+    />
+    <meta property="og:image" content="images/lava-auto-local.png" />
+    <style>
+      @font-face {
+        font-family: "Oswald";
+        src: url("fonts/oswald-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("fonts/plusjakartasans-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      :root {
+        --blue: #0955b8;
+        --blue-deep: #06275f;
+        --blue-dark: #08101f;
+        --yellow: #ffd21f;
+        --cream: #f7f3e7;
+        --water: #dff6ff;
+        --ink: #0b244f;
+        --line: rgba(6, 39, 95, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      iframe {
+        display: block;
+        max-width: 100%;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(6, 39, 95, 0.78);
+        color: var(--cream);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: min(1180px, calc(100% - 32px));
+        min-height: 72px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Oswald", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border: 2px solid var(--yellow);
+        border-radius: 999px;
+        background: var(--yellow);
+        color: var(--blue-deep);
+        font-style: italic;
+      }
+
+      .brand strong {
+        color: var(--yellow);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .pill-yellow {
+        background: var(--yellow);
+        color: var(--blue-deep);
+        box-shadow: 0 18px 42px rgba(255, 210, 31, 0.22);
+      }
+
+      .pill-blue {
+        background: var(--blue);
+        color: var(--cream);
+      }
+
+      .pill-outline {
+        border: 2px solid rgba(247, 243, 231, 0.38);
+        color: var(--cream);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 94svh;
+        padding: 132px 0 42px;
+        overflow: hidden;
+        color: var(--cream);
+        isolation: isolate;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(90deg, rgba(6, 39, 95, 0.96), rgba(6, 39, 95, 0.72) 48%, rgba(8, 16, 31, 0.18)),
+          url("images/lava-auto-local.png") center / cover;
+      }
+
+      .hero::after,
+      .grid-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.18;
+        background-image:
+          linear-gradient(rgba(223, 246, 255, 0.22) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(223, 246, 255, 0.22) 1px, transparent 1px);
+        background-size: 34px 34px;
+      }
+
+      .wrap {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero-inner {
+        display: flex;
+        min-height: calc(94svh - 174px);
+        flex-direction: column;
+        justify-content: end;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        border: 1px solid rgba(255, 210, 31, 0.62);
+        border-radius: 999px;
+        background: rgba(6, 39, 95, 0.72);
+        padding: 8px 14px;
+        color: var(--yellow);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin-top: 24px;
+        font-size: clamp(3.25rem, 9vw, 8.6rem);
+        line-height: 0.86;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 26px 0 0;
+        color: rgba(247, 243, 231, 0.84);
+        font-size: clamp(1rem, 1.7vw, 1.25rem);
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .trust {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        margin-top: 44px;
+        overflow: hidden;
+        border: 1px solid rgba(247, 243, 231, 0.18);
+        border-radius: 28px;
+        background: rgba(247, 243, 231, 0.94);
+        color: var(--blue-deep);
+      }
+
+      .trust-item {
+        padding: 20px;
+        border-right: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-right: 0;
+      }
+
+      .trust-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .trust small {
+        color: rgba(6, 39, 95, 0.64);
+        font-weight: 800;
+      }
+
+      .marquee {
+        display: flex;
+        overflow: hidden;
+        background: var(--yellow);
+        color: var(--blue-deep);
+      }
+
+      .marquee-track {
+        display: flex;
+        min-width: max-content;
+        animation: marquee 26s linear infinite;
+      }
+
+      .marquee span {
+        padding: 14px 24px;
+        font-family: "Oswald", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      section {
+        position: relative;
+        padding: 96px 0;
+      }
+
+      .cream {
+        background: var(--cream);
+      }
+
+      .blue {
+        background: var(--blue-deep);
+        color: var(--cream);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 52px;
+      }
+
+      .section-head h2 {
+        color: var(--blue-deep);
+        font-size: clamp(3rem, 6vw, 5.8rem);
+        line-height: 0.9;
+      }
+
+      .blue .section-head h2,
+      .blue h2 {
+        color: var(--cream);
+      }
+
+      .section-head p {
+        margin: 0;
+        color: rgba(6, 39, 95, 0.72);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .blue .section-head p {
+        color: rgba(247, 243, 231, 0.74);
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .blue .label {
+        color: var(--yellow);
+      }
+
+      .services,
+      .plans,
+      .features {
+        display: grid;
+        gap: 18px;
+      }
+
+      .services {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .service {
+        min-height: 500px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: var(--blue-deep);
+        color: var(--cream);
+        box-shadow: 0 22px 58px rgba(6, 39, 95, 0.12);
+      }
+
+      .service img {
+        width: 100%;
+        height: 235px;
+        object-fit: cover;
+      }
+
+      .service-body {
+        padding: 24px;
+      }
+
+      .price {
+        display: inline-flex;
+        margin-bottom: 22px;
+        border-radius: 999px;
+        background: var(--yellow);
+        padding: 6px 12px;
+        color: var(--blue-deep);
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+      }
+
+      .service h3,
+      .plan h3 {
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .service p,
+      .plan li,
+      .feature p {
+        color: rgba(247, 243, 231, 0.74);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .plans {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+
+      .plan {
+        display: flex;
+        min-height: 385px;
+        flex-direction: column;
+        border: 1px solid rgba(247, 243, 231, 0.15);
+        border-radius: 30px;
+        background: rgba(247, 243, 231, 0.08);
+        padding: 28px;
+      }
+
+      .plan.featured {
+        background: var(--yellow);
+        color: var(--blue-deep);
+        transform: translateY(-18px);
+        box-shadow: 0 26px 70px rgba(255, 210, 31, 0.24);
+      }
+
+      .plan.featured li {
+        color: rgba(6, 39, 95, 0.78);
+      }
+
+      .plan-price {
+        margin: 18px 0;
+        font-family: "Oswald", sans-serif;
+        font-size: 58px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .plan ul {
+        flex: 1;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: 42px;
+        align-items: start;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .photo {
+        position: relative;
+        min-height: 320px;
+        overflow: hidden;
+        border-radius: 30px;
+        background: var(--blue-deep);
+      }
+
+      .photo.large {
+        grid-column: 1 / -1;
+        min-height: 410px;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+      }
+
+      .photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(6, 39, 95, 0.92), transparent 58%);
+      }
+
+      .photo-title {
+        position: absolute;
+        right: 24px;
+        bottom: 22px;
+        left: 24px;
+        z-index: 2;
+        color: var(--cream);
+        font-family: "Oswald", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+        border: 1px solid rgba(247, 243, 231, 0.15);
+        border-radius: 28px;
+      }
+
+      .feature {
+        border-right: 1px solid rgba(247, 243, 231, 0.15);
+        border-bottom: 1px solid rgba(247, 243, 231, 0.15);
+        padding: 30px;
+      }
+
+      .feature h3 {
+        font-size: 24px;
+      }
+
+      .rating {
+        background: var(--yellow);
+        color: var(--blue-deep);
+      }
+
+      .rating-grid {
+        display: grid;
+        grid-template-columns: 0.6fr 1.2fr auto;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .rating-number {
+        font-family: "Oswald", sans-serif;
+        font-size: clamp(5rem, 12vw, 10rem);
+        font-weight: 700;
+        line-height: 0.8;
+      }
+
+      .stars {
+        font-size: 28px;
+        letter-spacing: 0.04em;
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 24px;
+      }
+
+      .location-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 32px;
+        background: var(--blue-deep);
+        padding: 34px;
+        color: var(--cream);
+      }
+
+      .location-card h2 {
+        font-size: clamp(3rem, 5.5vw, 5rem);
+        line-height: 0.9;
+      }
+
+      .location-card p {
+        color: rgba(247, 243, 231, 0.78);
+        line-height: 1.75;
+      }
+
+      .map {
+        min-height: 520px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: var(--blue-deep);
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .final {
+        background: linear-gradient(135deg, var(--blue), #0a78e3);
+        color: var(--cream);
+        text-align: center;
+      }
+
+      .final h2 {
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: clamp(3.2rem, 8vw, 7rem);
+        line-height: 0.9;
+      }
+
+      .final p {
+        max-width: 620px;
+        margin: 22px auto 0;
+        color: rgba(247, 243, 231, 0.8);
+        line-height: 1.7;
+      }
+
+      footer {
+        background: var(--blue-deep);
+        color: rgba(247, 243, 231, 0.72);
+        padding: 42px 0;
+        text-align: center;
+      }
+
+      footer .brand {
+        justify-content: center;
+        color: var(--cream);
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 106px;
+        }
+
+        .trust,
+        .section-head,
+        .services,
+        .plans,
+        .gallery,
+        .gallery-grid,
+        .features,
+        .rating-grid,
+        .location-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-item {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .trust-item:last-child {
+          border-bottom: 0;
+        }
+
+        .plan.featured {
+          transform: none;
+        }
+
+        .photo.large,
+        .photo {
+          min-height: 310px;
+        }
+
+        .map {
+          min-height: 430px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .pill {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="#top"><span class="brand-mark">L</span> Lava Auto <strong>Lowrider</strong></a>
+        <div class="nav-links">
+          <a href="#servicios">Servicios</a>
+          <a href="#planes">Planes</a>
+          <a href="#galeria">Galer&iacute;a</a>
+          <a href="#ubicacion">Ubicaci&oacute;n</a>
+          <a href="tel:+5073896698">389-6698</a>
+          <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">WhatsApp</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <span class="eyebrow">Arraij&aacute;n &middot; Panam&aacute; Oeste</span>
+          <h1>Lavado que se ve desde la calle</h1>
+          <p class="lead">
+            Lava Auto Lowrider convierte una parada r&aacute;pida en una experiencia clara:
+            espuma intensa, brillo visible y atenci&oacute;n directa por WhatsApp o llamada.
+          </p>
+          <div class="hero-actions">
+            <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">Agendar por WhatsApp</a>
+            <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">C&oacute;mo llegar</a>
+            <a class="pill pill-outline" href="tel:+5073896698">Llamar</a>
+          </div>
+          <div class="trust">
+            <div class="trust-item"><div class="trust-title">4.0 Google</div><small>6 rese&ntilde;as verificables</small></div>
+            <div class="trust-item"><div class="trust-title">Turno r&aacute;pido</div><small>confirma horario por WhatsApp</small></div>
+            <div class="trust-item"><div class="trust-title">Local real</div><small>foto, mapa y contacto en un solo lugar</small></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
+          <span>Lavado con espuma</span><span>Brillo exterior</span><span>Interior aspirado</span><span>Motor presentable</span><span>Agenda por WhatsApp</span>
+        </div>
+      </div>
+
+      <section id="servicios" class="cream grid-bg">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="label">Servicios</span>
+              <h2>El brillo no se promete. Se ve.</h2>
+            </div>
+            <p>Una p&aacute;gina que vende muestra exactamente qu&eacute; compra el cliente: espuma, detalle, ubicaci&oacute;n real y precios de referencia para decidir r&aacute;pido.</p>
+          </div>
+          <div class="services">
+            <article class="service">
+              <img src="images/carro-enjabonado-2.png" alt="Auto con espuma en Lava Auto Lowrider" />
+              <div class="service-body"><span class="price">Desde $5</span><h3>Lavado Express</h3><p>Exterior a mano, espuma abundante, llantas y vidrios listos para rodar.</p></div>
+            </article>
+            <article class="service">
+              <img src="images/carro-enjabonado.png" alt="Lavado completo de auto oscuro" />
+              <div class="service-body"><span class="price">Desde $8</span><h3>Lavado Completo</h3><p>Exterior, interior aspirado, tablero y puertas con acabado limpio.</p></div>
+            </article>
+            <article class="service">
+              <img src="images/lava-auto-local.png" alt="Local de Lava Auto Lowrider" />
+              <div class="service-body"><span class="price">Desde $12</span><h3>Brillo y Cera</h3><p>Cera protectora, llantas con brillo y pintura con presencia de calle.</p></div>
+            </article>
+            <article class="service">
+              <img src="images/motor.png" alt="Motor limpio de vehiculo" />
+              <div class="service-body"><span class="price">Desde $25</span><h3>Detailing Lowrider</h3><p>Limpieza profunda, motor presentable y detalles para carros exigentes.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="planes" class="blue">
+        <div class="wrap">
+          <div class="section-head">
+            <div><span class="label">Planes para clientes frecuentes</span><h2>Que el carro nunca llegue sucio.</h2></div>
+            <p>Los planes le dan al negocio una raz&oacute;n para que el cliente vuelva cada semana.</p>
+          </div>
+          <div class="plans">
+            <article class="plan"><h3>Rodando</h3><div class="plan-price">$20</div><ul><li>4 lavados b&aacute;sicos al mes</li><li>Sin cita previa</li><li>V&aacute;lido de lunes a viernes</li></ul><a class="pill pill-outline" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20el%20plan%20Rodando">Pedir este plan</a></article>
+            <article class="plan featured"><h3>Cruiser</h3><div class="plan-price">$35</div><ul><li>8 lavados completos al mes</li><li>10% de descuento en encerado</li><li>Prioridad en fila los fines de semana</li></ul><a class="pill pill-blue" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20el%20plan%20Cruiser">Pedir este plan</a></article>
+            <article class="plan"><h3>Lowrider Elite</h3><div class="plan-price">$55</div><ul><li>Lavados completos ilimitados</li><li>1 detailing gratis al mes</li><li>Prioridad para servicios de brillo y motor</li></ul><a class="pill pill-outline" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20el%20plan%20Lowrider%20Elite">Pedir este plan</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" class="cream grid-bg">
+        <div class="wrap gallery">
+          <div>
+            <span class="label">Prueba visual</span>
+            <h2>Que la p&aacute;gina venda antes de que pregunten precio.</h2>
+            <p>Las fotos reales hacen que el cliente conf&iacute;e: ve el local, ve el proceso y entiende el acabado que puede esperar.</p>
+            <p><a class="pill pill-blue" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">Enviar mensaje</a></p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="photo large"><img src="images/lava-auto-local.png" alt="Frente del local" /><figcaption class="photo-title">El punto es reconocible.</figcaption></figure>
+            <figure class="photo"><img src="images/carro-enjabonado-2.png" alt="Espuma completa" /><figcaption class="photo-title">Espuma completa</figcaption></figure>
+            <figure class="photo"><img src="images/carro-enjabonado.png" alt="Brillo exterior" /><figcaption class="photo-title">Brillo exterior</figcaption></figure>
+            <figure class="photo"><img src="images/motor.png" alt="Motor presentable" /><figcaption class="photo-title">Motor presentable</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="blue">
+        <div class="wrap">
+          <span class="label">Por qu&eacute; funciona</span>
+          <h2>La confianza est&aacute; en los detalles.</h2>
+          <div class="features">
+            <article class="feature"><h3>Local visible</h3><p>Entrada directa, letrero grande y punto f&aacute;cil de reconocer en Arraij&aacute;n.</p></article>
+            <article class="feature"><h3>Atenci&oacute;n r&aacute;pida</h3><p>Llegas, preguntas, eliges el servicio y el equipo se mueve sin complicarte.</p></article>
+            <article class="feature"><h3>Resultado visible</h3><p>Espuma, llantas, vidrios y pintura trabajados para que el cambio se note.</p></article>
+            <article class="feature"><h3>Agenda por WhatsApp</h3><p>Escribe, confirma el horario y llega directo sin vueltas innecesarias.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rating">
+        <div class="wrap rating-grid">
+          <div class="rating-number">4.0</div>
+          <div><div class="stars">★★★★★</div><h2>Rese&ntilde;as que el cliente puede verificar.</h2><p>6 rese&ntilde;as en Google dan una base real para vender confianza, ubicaci&oacute;n y contacto directo desde la web.</p></div>
+          <a class="pill pill-blue" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">Ver en Google</a>
+        </div>
+      </section>
+
+      <section id="ubicacion" class="cream grid-bg">
+        <div class="wrap location-grid">
+          <div class="location-card">
+            <div>
+              <span class="label">Ubicaci&oacute;n</span>
+              <h2>Llegas directo. Sales brillando.</h2>
+              <p>W9Q5+M53, Calle, Arraij&aacute;n, Panam&aacute; Oeste</p>
+              <p>389-6698</p>
+              <p>Confirma el horario de hoy por WhatsApp antes de llegar.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">WhatsApp</a>
+              <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">C&oacute;mo llegar</a>
+            </div>
+          </div>
+          <div class="map">
+            <iframe title="Ubicaci&oacute;n de Lava Auto Lowrider" src="https://www.google.com/maps?q=8.9391428,-79.64208&amp;z=18&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="wrap">
+          <h2>Tu pr&oacute;ximo cliente est&aacute; a un mensaje.</h2>
+          <p>Lava Auto Lowrider queda listo para recibir llamadas, visitas y chats desde la misma p&aacute;gina.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">Agendar por WhatsApp</a>
+            <a class="pill pill-outline" href="tel:+5073896698">Llamar ahora</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <a class="brand" href="#top"><span class="brand-mark">L</span> Lava Auto <strong>Lowrider</strong></a>
+        <p>W9Q5+M53, Calle, Arraij&aacute;n, Panam&aacute; Oeste</p>
+        <p><a href="tel:+5073896698">389-6698</a> &middot; <a href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">WhatsApp</a></p>
+        <small>&copy; 2026 Lava Auto Lowrider.</small>
+      </div>
+    </footer>
+  </body>
+</html>
