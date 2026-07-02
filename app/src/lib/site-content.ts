@@ -17,26 +17,37 @@ export const MAPS_EMBED_SRC = "https://www.google.com/maps?q=8.9391428,-79.64208
 export const GOOGLE_RATING = 4.0;
 export const GOOGLE_REVIEW_COUNT = 6;
 
+export const SITE_IMAGES = {
+  local: "/images/lava-auto-local.png",
+  foamDark: "/images/carro-enjabonado.png",
+  foamLight: "/images/carro-enjabonado-2.png",
+  engine: "/images/motor.png",
+} as const;
+
 export const SERVICES = [
   {
-    name: "Lavado Básico",
+    name: "Lavado Express",
     price: "5",
-    description: "Exterior a mano, llantas y vidrios impecables. Rápido y directo.",
+    image: SITE_IMAGES.foamLight,
+    description: "Exterior a mano, espuma abundante, llantas y vidrios listos para rodar.",
   },
   {
     name: "Lavado Completo",
     price: "8",
-    description: "Exterior + interior aspirado, tablero y puertas limpias por dentro.",
+    image: SITE_IMAGES.foamDark,
+    description: "Exterior, interior aspirado, tablero y puertas con acabado limpio.",
   },
   {
-    name: "Encerado y Brillo",
+    name: "Brillo y Cera",
     price: "12",
-    description: "Cera protectora, llantas con brillo de silicona, pintura tipo espejo.",
+    image: SITE_IMAGES.local,
+    description: "Cera protectora, llantas con brillo y pintura con presencia de calle.",
   },
   {
     name: "Detailing Lowrider",
     price: "25",
-    description: "Limpieza profunda de tapicería, motor presentable y encerado premium.",
+    image: SITE_IMAGES.engine,
+    description: "Limpieza profunda, motor presentable y detalles para carros exigentes.",
   },
 ] as const;
 
@@ -66,7 +77,7 @@ export const MEMBERSHIPS = [
     perks: [
       "Lavados completos ilimitados",
       "1 detailing gratis al mes",
-      "Corte de cabello con descuento en la barbería vecina",
+      "Prioridad para servicios de brillo y motor",
     ],
     highlighted: false,
   },
@@ -74,19 +85,19 @@ export const MEMBERSHIPS = [
 
 export const FEATURES = [
   {
-    title: "A minutos de Arraiján",
-    description: "Fácil de encontrar, entrada directa desde la calle, sin vueltas.",
+    title: "Local visible",
+    description: "Entrada directa, letrero grande y punto fácil de reconocer en Arraiján.",
   },
   {
-    title: "Mientras esperas, te arreglas",
-    description: "Justo al lado está la barbería del barrio: entra, córtate y sal con el carro listo.",
+    title: "Atención rápida",
+    description: "Llegas, preguntas, eliges el servicio y el equipo se mueve sin complicarte.",
   },
   {
-    title: "Trato de barrio, resultado de show",
-    description: "Manos locales, atención directa y un acabado que se nota desde la calle.",
+    title: "Resultado visible",
+    description: "Espuma, llantas, vidrios y pintura trabajados para que el cambio se note.",
   },
   {
     title: "Agenda por WhatsApp",
-    description: "Sin llamadas ni esperas: escribe, confirma y llega cuando te convenga.",
+    description: "Escribe, confirma el horario y llega directo sin vueltas innecesarias.",
   },
 ] as const;

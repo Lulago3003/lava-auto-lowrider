@@ -8,7 +8,7 @@ export function Marquee({ items }: { items: ReactNode[] }) {
           <span className="whitespace-nowrap font-display text-sm font-semibold tracking-[0.25em] uppercase">
             {item}
           </span>
-          <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-lowrider-black/70" />
+          <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-lowrider-blue-deep/70" />
         </div>
       ))}
     </div>
@@ -17,7 +17,7 @@ export function Marquee({ items }: { items: ReactNode[] }) {
   return (
     <div
       aria-hidden
-      className="group flex w-full overflow-hidden bg-lowrider-yellow py-3 text-lowrider-black"
+      className="group flex w-full overflow-hidden bg-lowrider-yellow py-3 text-lowrider-blue-deep"
     >
       <div className="animate-marquee flex w-max shrink-0 group-hover:[animation-play-state:paused]">
         {track}

@@ -33,20 +33,25 @@
   --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-lowrider-black: #0b0b0d;
-  --color-lowrider-charcoal: #16161a;
-  --color-lowrider-asphalt: #202024;
-  --color-lowrider-line: #2c2c31;
-  --color-lowrider-yellow: #ffc400;
-  --color-lowrider-yellow-soft: #ffd84d;
-  --color-lowrider-yellow-deep: #e0a500;
-  --color-lowrider-cream: #f5f1e6;
-  --color-lowrider-chrome: #c7cad1;
+  --color-lowrider-black: #08101f;
+  --color-lowrider-charcoal: #102142;
+  --color-lowrider-asphalt: #1a3769;
+  --color-lowrider-line: #c8d9f2;
+  --color-lowrider-blue: #0955b8;
+  --color-lowrider-blue-deep: #06275f;
+  --color-lowrider-blue-bright: #0a78e3;
+  --color-lowrider-yellow: #ffd21f;
+  --color-lowrider-yellow-soft: #ffe37b;
+  --color-lowrider-yellow-deep: #e5aa00;
+  --color-lowrider-cream: #f7f3e7;
+  --color-lowrider-chrome: #d7e5f5;
+  --color-lowrider-water: #dff6ff;
 
   --animate-marquee: marquee 26s linear infinite;
   --animate-glow-pulse: glow-pulse 3.2s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-sheen: sheen 7s linear infinite;
 }
 
 @keyframes marquee {
@@ -88,6 +93,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes sheen {
+  to {
+    transform: translateX(120%);
   }
 }
 
@@ -197,8 +208,19 @@
 @layer components {
   [data-site] {
     font-family: var(--font-body);
-    background-color: var(--color-lowrider-black);
-    color: var(--color-lowrider-cream);
+    background:
+      radial-gradient(
+        circle at top left,
+        color-mix(in oklch, var(--color-lowrider-water) 55%, transparent),
+        transparent 32rem
+      ),
+      linear-gradient(
+        180deg,
+        var(--color-lowrider-cream) 0%,
+        #edf7ff 48%,
+        var(--color-lowrider-cream) 100%
+      );
+    color: var(--color-lowrider-blue-deep);
   }
 
   [data-site] [data-reveal] {
@@ -217,11 +239,11 @@
   [data-site] .text-shine {
     background: linear-gradient(
       100deg,
-      var(--color-lowrider-yellow-deep) 20%,
-      var(--color-lowrider-yellow-soft) 40%,
+      var(--color-lowrider-blue) 20%,
+      var(--color-lowrider-yellow) 40%,
       #fff8dd 50%,
-      var(--color-lowrider-yellow-soft) 60%,
-      var(--color-lowrider-yellow-deep) 80%
+      var(--color-lowrider-yellow) 60%,
+      var(--color-lowrider-blue-bright) 80%
     );
     background-size: 220% 100%;
     background-clip: text;
@@ -245,6 +267,40 @@
     mix-blend-mode: overlay;
     background-image: radial-gradient(var(--color-lowrider-chrome) 0.6px, transparent 0.6px);
     background-size: 3px 3px;
+  }
+
+  [data-site] .water-grid {
+    background-image:
+      linear-gradient(
+        color-mix(in oklch, var(--color-lowrider-blue) 14%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        color-mix(in oklch, var(--color-lowrider-blue) 14%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 34px 34px;
+  }
+
+  [data-site] .photo-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  [data-site] .photo-sheen::after {
+    content: "";
+    position: absolute;
+    inset-block: -30%;
+    left: -60%;
+    width: 42%;
+    transform: skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+    animation: sheen 7s linear infinite;
+  }
+
+  [data-site] .angled-edge {
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
   }
 }
 
