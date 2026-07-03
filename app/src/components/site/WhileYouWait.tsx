@@ -1,6 +1,6 @@
 import { Scissors, Armchair, UtensilsCrossed, type LucideIcon } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { WAIT_PERKS } from "../../lib/site-content";
+import { NEARBY_SPOTS, WAIT_PERKS } from "../../lib/site-content";
 
 const ICONS: LucideIcon[] = [Scissors, Armchair, UtensilsCrossed];
 
@@ -38,15 +38,21 @@ export function WhileYouWait() {
               <Reveal
                 key={perk.title}
                 delayMs={i * 100}
-                className={`flex min-h-[300px] flex-col justify-between rounded-[2rem] border p-8 shadow-xl transition-transform duration-300 hover:-translate-y-2 ${
+                className={`flex flex-col overflow-hidden rounded-[2rem] border shadow-xl transition-transform duration-300 hover:-translate-y-2 ${
                   perk.highlighted
                     ? "border-lowrider-yellow bg-lowrider-blue-deep text-lowrider-cream shadow-lowrider-blue/15"
                     : "border-lowrider-blue/14 bg-white text-lowrider-blue-deep shadow-lowrider-blue/10"
                 }`}
               >
-                <div>
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={perk.image}
+                    alt={perk.imageAlt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                   <span
-                    className={`flex h-12 w-12 items-center justify-center rounded-full ${
+                    className={`absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-full shadow-lg ${
                       perk.highlighted
                         ? "bg-lowrider-yellow text-lowrider-blue-deep"
                         : "bg-lowrider-blue text-lowrider-cream"
@@ -54,30 +60,64 @@ export function WhileYouWait() {
                   >
                     <Icon className="h-6 w-6" strokeWidth={2} />
                   </span>
-                  <h3 className="mt-6 font-display text-2xl leading-none font-semibold tracking-normal uppercase">
-                    {perk.title}
-                  </h3>
-                  <p
-                    className={`mt-4 font-body text-sm leading-6 ${
-                      perk.highlighted ? "text-lowrider-cream/75" : "text-lowrider-blue-deep/70"
+                </div>
+                <div className="flex flex-1 flex-col justify-between p-7">
+                  <div>
+                    <h3 className="font-display text-2xl leading-none font-semibold tracking-normal uppercase">
+                      {perk.title}
+                    </h3>
+                    <p
+                      className={`mt-4 font-body text-sm leading-6 ${
+                        perk.highlighted ? "text-lowrider-cream/75" : "text-lowrider-blue-deep/70"
+                      }`}
+                    >
+                      {perk.description}
+                    </p>
+                  </div>
+                  <span
+                    className={`mt-6 inline-flex w-fit rounded-full px-4 py-1.5 font-body text-xs font-bold tracking-wide uppercase ${
+                      perk.highlighted
+                        ? "bg-lowrider-yellow/16 text-lowrider-yellow"
+                        : "bg-lowrider-blue/10 text-lowrider-blue"
                     }`}
                   >
-                    {perk.description}
-                  </p>
+                    {perk.tag}
+                  </span>
                 </div>
-                <span
-                  className={`mt-6 inline-flex w-fit rounded-full px-4 py-1.5 font-body text-xs font-bold tracking-wide uppercase ${
-                    perk.highlighted
-                      ? "bg-lowrider-yellow/16 text-lowrider-yellow"
-                      : "bg-lowrider-blue/10 text-lowrider-blue"
-                  }`}
-                >
-                  {perk.tag}
-                </span>
               </Reveal>
             );
           })}
         </div>
+
+        <Reveal
+          delayMs={200}
+          className="mt-9 flex flex-wrap items-center gap-2.5 rounded-[2rem] bg-lowrider-blue-deep p-6 text-lowrider-cream shadow-xl shadow-lowrider-blue/15 sm:p-7"
+        >
+          <span className="mr-2 font-display text-lg font-bold tracking-wide text-lowrider-yellow uppercase">
+            Todo queda cerca
+          </span>
+          {NEARBY_SPOTS.map((spot) => (
+            <span
+              key={spot.name}
+              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-body text-xs font-bold sm:text-[13px] ${
+                spot.highlighted
+                  ? "border-lowrider-yellow bg-lowrider-yellow text-lowrider-blue-deep"
+                  : "border-lowrider-cream/25 text-lowrider-cream/90"
+              }`}
+            >
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  spot.highlighted ? "bg-lowrider-blue-deep" : "bg-lowrider-yellow"
+                }`}
+              />
+              {spot.name}
+            </span>
+          ))}
+          <p className="mt-2 w-full font-body text-xs font-semibold text-lowrider-cream/60">
+            Estamos sobre la Calle 11 de Octubre: deja el carro, haz tus vueltas en la zona y
+            recoge tu carro brillando.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

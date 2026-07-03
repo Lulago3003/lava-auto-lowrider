@@ -22,6 +22,9 @@ export const SITE_IMAGES = {
   foamDark: "/images/carro-enjabonado.png",
   foamLight: "/images/carro-enjabonado-2.png",
   engine: "/images/motor.png",
+  barber: "/images/barberia.jpg",
+  waiting: "/images/espera-telefono.jpg",
+  food: "/images/comida.jpg",
 } as const;
 
 export const SERVICES = [
@@ -108,6 +111,8 @@ export const WAIT_PERKS = [
   {
     title: "Barbería al lado",
     tag: "El combo favorito",
+    image: SITE_IMAGES.barber,
+    imageAlt: "Barbero cortando el cabello a un cliente",
     description:
       "Justo al lado del lavado está la barbería del barrio. Entra, córtate el cabello o arregla la barba, y cuando salgas tu carro te espera brillando.",
     highlighted: true,
@@ -115,6 +120,8 @@ export const WAIT_PERKS = [
   {
     title: "Entretenimiento en espera",
     tag: "Espera sin estrés",
+    image: SITE_IMAGES.waiting,
+    imageAlt: "Teléfono con aplicaciones para pasar el rato",
     description:
       "Zona para esperar tranquilo: siéntate, revisa el teléfono, conversa o mira cómo dejamos tu carro. La espera se pasa rápido.",
     highlighted: false,
@@ -122,8 +129,21 @@ export const WAIT_PERKS = [
   {
     title: "Comida a pasos",
     tag: "Sin moverte de la zona",
+    image: SITE_IMAGES.food,
+    imageAlt: "Comida típica lista para comer",
     description:
       "¿Te agarró el hambre? Hay opciones de comida cerca del local: pides tu lavado, comes algo y regresas justo cuando tu carro está listo.",
     highlighted: false,
   },
+] as const;
+
+// Negocios reales alrededor del local (C. 11 de Octubre). La barbería está
+// justo al lado aunque no aparezca en Google Maps.
+export const NEARBY_SPOTS = [
+  { name: "Barbería · justo al lado", highlighted: true },
+  { name: "Supermercado 38", highlighted: false },
+  { name: "Farmacia Regís", highlighted: false },
+  { name: "Lavandería Natalia", highlighted: false },
+  { name: "Maximateriales", highlighted: false },
+  { name: "Parada de bus · C. 11 de Octubre", highlighted: false },
 ] as const;

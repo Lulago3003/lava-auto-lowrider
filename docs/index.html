@@ -863,17 +863,29 @@
         display: flex;
         min-height: 300px;
         flex-direction: column;
-        justify-content: space-between;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: #fff;
-        padding: 30px;
         box-shadow: 0 18px 48px rgba(6, 39, 95, 0.1);
         transition:
           transform 180ms ease,
           box-shadow 180ms ease,
           border-color 180ms ease;
+      }
+
+      .wait-card img {
+        width: 100%;
+        height: 205px;
+        object-fit: cover;
+      }
+
+      .wait-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 26px 28px;
       }
 
       .wait-card:hover {
@@ -941,6 +953,65 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+      }
+
+      /* Franja "todo queda cerca": los negocios reales alrededor del local */
+      .nearby {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 36px;
+        border-radius: 8px;
+        background: var(--blue-deep);
+        color: var(--cream);
+        padding: 22px 24px;
+        box-shadow: 0 22px 58px rgba(6, 39, 95, 0.16);
+      }
+
+      .nearby-title {
+        margin-right: 10px;
+        color: var(--yellow);
+        font-family: "Oswald", sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(247, 243, 231, 0.24);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .chip .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--yellow);
+      }
+
+      .chip.star {
+        border-color: var(--yellow);
+        background: var(--yellow);
+        color: var(--blue-deep);
+      }
+
+      .chip.star .dot {
+        background: var(--blue-deep);
+      }
+
+      .nearby-note {
+        width: 100%;
+        margin: 8px 0 0;
+        color: rgba(247, 243, 231, 0.62);
+        font-size: 12.5px;
+        font-weight: 700;
       }
 
       .pill-waze {
@@ -1315,29 +1386,49 @@
           </div>
           <div class="wait-cards">
             <article class="wait-card gold">
-              <div>
-                <span class="wait-num">1</span>
-                <h3>Barber&iacute;a al lado</h3>
-                <p>Justo al lado del lavado est&aacute; la barber&iacute;a del barrio. Entra, c&oacute;rtate el cabello o arregla la barba, y cuando salgas tu carro te espera brillando. Sales renovado t&uacute; y tu carro.</p>
+              <img src="images/barberia.jpg" alt="Barbero cortando el cabello a un cliente" loading="lazy" />
+              <div class="wait-body">
+                <div>
+                  <span class="wait-num">1</span>
+                  <h3>Barber&iacute;a al lado</h3>
+                  <p>Justo al lado del lavado est&aacute; la barber&iacute;a del barrio. Entra, c&oacute;rtate el cabello o arregla la barba, y cuando salgas tu carro te espera brillando.</p>
+                </div>
+                <span class="wait-tag">El combo favorito</span>
               </div>
-              <span class="wait-tag">El combo favorito</span>
             </article>
             <article class="wait-card">
-              <div>
-                <span class="wait-num">2</span>
-                <h3>Entretenimiento en espera</h3>
-                <p>Zona para esperar tranquilo: si&eacute;ntate, revisa el tel&eacute;fono, conversa o mira c&oacute;mo dejamos tu carro. La espera se pasa r&aacute;pido y siempre hay ambiente de barrio.</p>
+              <img src="images/espera-telefono.jpg" alt="Tel&eacute;fono con aplicaciones para pasar el rato" loading="lazy" />
+              <div class="wait-body">
+                <div>
+                  <span class="wait-num">2</span>
+                  <h3>Entretenimiento en espera</h3>
+                  <p>Zona para esperar tranquilo: si&eacute;ntate, revisa el tel&eacute;fono, conversa o mira c&oacute;mo dejamos tu carro. La espera se pasa r&aacute;pido.</p>
+                </div>
+                <span class="wait-tag">Espera sin estr&eacute;s</span>
               </div>
-              <span class="wait-tag">Espera sin estr&eacute;s</span>
             </article>
             <article class="wait-card">
-              <div>
-                <span class="wait-num">3</span>
-                <h3>Comida a pasos</h3>
-                <p>&iquest;Te agarr&oacute; el hambre? Hay opciones de comida cerca del local para que aproveches: llegas, pides tu lavado, comes algo y regresas justo cuando tu carro est&aacute; listo.</p>
+              <img src="images/comida.jpg" alt="Comida t&iacute;pica lista para comer" loading="lazy" />
+              <div class="wait-body">
+                <div>
+                  <span class="wait-num">3</span>
+                  <h3>Comida a pasos</h3>
+                  <p>&iquest;Te agarr&oacute; el hambre? Hay opciones de comida cerca del local: pides tu lavado, comes algo y regresas justo cuando tu carro est&aacute; listo.</p>
+                </div>
+                <span class="wait-tag">Sin moverte de la zona</span>
               </div>
-              <span class="wait-tag">Sin moverte de la zona</span>
             </article>
+          </div>
+
+          <div class="nearby">
+            <span class="nearby-title">Todo queda cerca</span>
+            <span class="chip star"><span class="dot"></span>Barber&iacute;a &middot; justo al lado</span>
+            <span class="chip"><span class="dot"></span>Supermercado 38</span>
+            <span class="chip"><span class="dot"></span>Farmacia Reg&iacute;s</span>
+            <span class="chip"><span class="dot"></span>Lavander&iacute;a Natalia</span>
+            <span class="chip"><span class="dot"></span>Maximateriales</span>
+            <span class="chip"><span class="dot"></span>Parada de bus &middot; C. 11 de Octubre</span>
+            <p class="nearby-note">Estamos sobre la Calle 11 de Octubre: deja el carro, haz tus vueltas en la zona y recoge tu carro brillando.</p>
           </div>
         </div>
       </section>
