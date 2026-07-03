@@ -17,7 +17,7 @@ export function Memberships() {
           <p className="font-body text-sm font-bold tracking-[0.18em] text-lowrider-yellow uppercase">
             Planes para clientes frecuentes
           </p>
-          <h2 className="mt-3 font-display text-5xl leading-[0.9] font-bold tracking-normal text-lowrider-cream uppercase sm:text-6xl">
+          <h2 className="mt-3 font-display text-3xl leading-[1.04] font-bold tracking-normal text-lowrider-cream uppercase sm:text-[2.6rem]">
             Que el carro nunca llegue sucio.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-8 text-lowrider-cream/72">
@@ -43,11 +43,11 @@ export function Memberships() {
                   Más vendido
                 </span>
               )}
-              <h3 className="font-display text-3xl font-semibold tracking-normal uppercase">
+              <h3 className="font-display text-2xl font-semibold tracking-normal uppercase">
                 {plan.name}
               </h3>
               <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-6xl font-bold leading-none">${plan.price}</span>
+                <span className="font-display text-5xl font-bold leading-none">${plan.price}</span>
                 <span
                   className={`font-body text-sm ${plan.highlighted ? "text-lowrider-blue-deep/62" : "text-lowrider-cream/55"}`}
                 >

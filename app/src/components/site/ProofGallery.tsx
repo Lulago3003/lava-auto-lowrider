@@ -28,7 +28,7 @@ export function ProofGallery() {
           <p className="font-body text-sm font-bold tracking-[0.18em] text-lowrider-blue uppercase">
             Prueba visual
           </p>
-          <h2 className="mt-3 font-display text-5xl leading-[0.9] font-bold tracking-normal text-lowrider-blue-deep uppercase sm:text-6xl">
+          <h2 className="mt-3 font-display text-3xl leading-[1.04] font-bold tracking-normal text-lowrider-blue-deep uppercase sm:text-[2.6rem]">
             Ves el proceso antes de llegar.
           </h2>
           <p className="mt-6 max-w-md font-body text-lg leading-8 text-lowrider-blue-deep/72">
@@ -56,7 +56,7 @@ export function ProofGallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-lowrider-blue-deep/88 via-lowrider-blue-deep/12 to-transparent" />
             <div className="absolute right-6 bottom-6 left-6">
-              <p className="font-display text-4xl leading-none font-bold text-lowrider-cream uppercase">
+              <p className="font-display text-2xl leading-none font-bold text-lowrider-cream uppercase sm:text-3xl">
                 El punto es reconocible.
               </p>
               <p className="mt-2 max-w-md font-body text-sm leading-6 text-lowrider-cream/75">

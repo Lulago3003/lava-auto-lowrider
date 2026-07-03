@@ -12,7 +12,7 @@ export function CtaBand() {
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-7 px-5 text-center sm:px-8">
         <Reveal
           as="h2"
-          className="font-display text-5xl leading-[0.9] font-bold tracking-normal uppercase sm:text-7xl"
+          className="font-display text-3xl leading-[1.02] font-bold tracking-normal uppercase sm:text-5xl"
         >
           Tu carro puede salir brillando hoy.
         </Reveal>

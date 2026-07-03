@@ -102,6 +102,43 @@
   }
 }
 
+/* Burbujas de jabón del hero — cada una posiciona/temporiza con --x/--s/--d/--delay */
+.hero-bubble {
+  position: absolute;
+  bottom: -70px;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 30%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.26) 44%,
+    rgba(223, 246, 255, 0.1) 72%
+  );
+  opacity: 0;
+  animation: bubble-rise var(--d) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  96% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-108vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
   .animate-marquee,
@@ -111,6 +148,10 @@
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .hero-bubble {
+    display: none;
   }
 }
 

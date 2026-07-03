@@ -17,7 +17,7 @@ export function WhileYouWait() {
             <p className="font-body text-sm font-bold tracking-[0.18em] text-lowrider-blue uppercase">
               Mientras esperas
             </p>
-            <h2 className="mt-3 max-w-2xl font-display text-5xl leading-[0.9] font-bold tracking-normal text-lowrider-blue-deep uppercase sm:text-6xl">
+            <h2 className="mt-3 max-w-2xl font-display text-3xl leading-[1.04] font-bold tracking-normal text-lowrider-blue-deep uppercase sm:text-[2.6rem]">
               Tu carro se lava. Tú no pierdes el tiempo.
             </h2>
           </Reveal>

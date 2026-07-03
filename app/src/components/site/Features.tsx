@@ -13,7 +13,7 @@ export function Features() {
           <p className="font-body text-sm font-bold tracking-[0.18em] text-lowrider-yellow uppercase">
             Por qué funciona
           </p>
-          <h2 className="mt-3 font-display text-5xl leading-[0.9] font-bold tracking-normal uppercase sm:text-6xl">
+          <h2 className="mt-3 font-display text-3xl leading-[1.04] font-bold tracking-normal uppercase sm:text-[2.6rem]">
             La confianza está en los detalles.
           </h2>
         </Reveal>

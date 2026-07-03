@@ -20,7 +20,7 @@ export function Location() {
             <p className="font-body text-sm font-bold tracking-[0.18em] text-lowrider-yellow uppercase">
               Ubicación
             </p>
-            <h2 className="mt-3 font-display text-5xl leading-[0.9] font-bold tracking-normal uppercase">
+            <h2 className="mt-3 font-display text-3xl leading-[1.04] font-bold tracking-normal uppercase sm:text-4xl">
               Llegas directo. Sales brillando.
             </h2>
 

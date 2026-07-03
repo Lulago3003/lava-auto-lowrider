@@ -32,7 +32,7 @@ export function ProofBand() {
           <span className="font-body text-xs font-black tracking-[0.16em] text-lowrider-blue uppercase">
             Prueba real, no promesa
           </span>
-          <h2 className="mt-3 max-w-3xl font-display text-[clamp(3.1rem,7vw,6.4rem)] leading-[0.88] font-bold tracking-normal uppercase">
+          <h2 className="mt-3 max-w-3xl font-display text-[clamp(2.1rem,4.4vw,3.6rem)] leading-[1.02] font-bold tracking-normal uppercase">
             Ves el local antes de escribir.
           </h2>
           <p className="mt-5 max-w-2xl font-body text-base leading-7 text-lowrider-blue-deep/76 sm:text-lg">
