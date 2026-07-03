@@ -1,7 +1,6 @@
-import { Camera, Clock, MapPin, MessageCircle, Navigation } from "lucide-react";
+import { Camera, Clock, MapPin, MessageCircle, Navigation, Tag } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { SoapCar } from "./SoapCar";
-import { MAPS_NAVIGATE_URL, SITE_IMAGES, WAZE_URL, WHATSAPP_URL } from "../../lib/site-content";
+import { SERVICES, SITE_IMAGES, WHATSAPP_URL } from "../../lib/site-content";
 
 const BUBBLES = [
   { x: "6%", s: "22px", d: "13s", delay: "0s" },
@@ -53,30 +52,19 @@ export function Hero() {
       <div className="relative mx-auto flex min-h-[94svh] max-w-7xl flex-col items-center justify-center px-5 pt-28 pb-12 text-center sm:px-8 sm:pt-32">
         <Reveal className="inline-flex items-center gap-2 rounded-full border border-lowrider-yellow/60 bg-lowrider-blue-deep/70 px-4 py-2 font-body text-xs font-bold tracking-[0.14em] text-lowrider-yellow uppercase backdrop-blur">
           <MapPin className="h-4 w-4" strokeWidth={2.2} />
-          Arraiján · Panamá Oeste
+          Arraiján · Panamá Oeste · Calle 11 de Octubre
         </Reveal>
 
-        {/* El letrero: nombre al centro, carros enjabonados a los lados */}
         <Reveal
           delayMs={80}
-          className="mt-7 flex w-full max-w-4xl flex-col items-center gap-4 rounded-3xl border-[3px] border-lowrider-yellow bg-[linear-gradient(160deg,rgba(6,39,95,0.88),rgba(9,85,184,0.72))] px-5 py-6 shadow-[0_0_0_6px_rgba(6,39,95,0.55),0_30px_80px_rgba(8,16,31,0.45)] backdrop-blur-sm sm:flex-row sm:justify-center sm:gap-8 sm:px-10 sm:py-9"
+          as="h1"
+          className="mt-7 max-w-4xl font-display text-[clamp(2.1rem,10vw,2.8rem)] leading-[1.04] font-bold tracking-normal uppercase sm:text-[clamp(2.5rem,5.6vw,4.6rem)] sm:leading-none"
         >
-          <SoapCar className="w-32 shrink-0 drop-shadow-[0_12px_22px_rgba(8,16,31,0.4)] sm:w-[clamp(84px,13vw,175px)]" />
-          <div className="grid justify-items-center gap-1.5">
-            <span className="font-display text-xl font-semibold tracking-[0.34em] text-lowrider-cream uppercase sm:text-[clamp(1.15rem,2.6vw,2rem)]">
-              Lava Auto
-            </span>
-            <h1 className="font-display text-[clamp(2.3rem,12vw,3rem)] leading-[0.94] font-bold text-lowrider-yellow uppercase [text-shadow:0_3px_0_rgba(6,39,95,0.85),0_14px_34px_rgba(8,16,31,0.5)] sm:text-[clamp(2.5rem,7vw,5.4rem)]">
-              Lowrider
-            </h1>
-            <span className="mt-1 font-display text-xs font-semibold tracking-[0.22em] text-lowrider-cream/85 uppercase sm:text-[clamp(0.8rem,1.4vw,1.02rem)]">
-              Lavado fuerte · Brillo de calle
-            </span>
-          </div>
-          <SoapCar
-            flipped
-            className="hidden w-32 shrink-0 drop-shadow-[0_12px_22px_rgba(8,16,31,0.4)] sm:block sm:w-[clamp(84px,13vw,175px)]"
-          />
+          Tu carro brillando{" "}
+          <span className="text-lowrider-yellow [text-shadow:0_4px_0_rgba(6,39,95,0.7)]">
+            desde $5
+          </span>
+          . Sin perder tu tiempo.
         </Reveal>
 
         <Reveal
@@ -84,9 +72,8 @@ export function Hero() {
           as="p"
           className="mt-6 max-w-2xl font-body text-base leading-7 text-lowrider-cream/84 sm:text-lg sm:leading-8"
         >
-          En Lava Auto Lowrider el carro entra sucio y sale con presencia: espuma intensa,
-          llantas con brillo e interior atendido. Y mientras esperas, córtate el cabello en la
-          barbería de al lado o come algo cerca. Todo en una sola parada.
+          Lavado a mano con espuma intensa, llantas con brillo e interior atendido. Y mientras
+          esperas: barbería al lado, comida cerca y tus vueltas en la misma calle.
         </Reveal>
 
         <Reveal delayMs={240} className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
@@ -100,27 +87,38 @@ export function Hero() {
             Agendar por WhatsApp
           </a>
           <a
-            href={MAPS_NAVIGATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#servicios"
             className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border-2 border-lowrider-cream/40 bg-lowrider-blue-deep/35 px-7 font-display text-base font-semibold tracking-wide text-lowrider-cream uppercase backdrop-blur transition-colors hover:border-lowrider-yellow hover:text-lowrider-yellow"
           >
-            <Navigation className="h-5 w-5" strokeWidth={2.3} />
-            Google Maps
+            <Tag className="h-5 w-5" strokeWidth={2.3} />
+            Ver precios
           </a>
           <a
-            href={WAZE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#ubicacion"
             className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border-2 border-lowrider-cream/25 px-7 font-display text-base font-semibold tracking-wide text-lowrider-cream uppercase transition-colors hover:border-lowrider-yellow hover:text-lowrider-yellow"
           >
             <Navigation className="h-5 w-5" strokeWidth={2.3} />
-            Waze
+            Cómo llegar
           </a>
         </Reveal>
 
         <Reveal
-          delayMs={320}
+          delayMs={300}
+          className="mt-7 inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-full border border-lowrider-yellow/40 bg-lowrider-blue-deep/72 px-7 py-3 backdrop-blur"
+        >
+          {SERVICES.map((service) => (
+            <span
+              key={service.name}
+              className="font-display text-sm font-semibold tracking-wide text-lowrider-cream/88 uppercase"
+            >
+              {service.name.replace("Lavado ", "")}{" "}
+              <strong className="text-lowrider-yellow">${service.price}</strong>
+            </span>
+          ))}
+        </Reveal>
+
+        <Reveal
+          delayMs={360}
           className="mt-12 grid w-full max-w-5xl grid-cols-1 overflow-hidden rounded-[2rem] border border-lowrider-cream/18 bg-lowrider-cream/94 text-left text-lowrider-blue-deep shadow-2xl shadow-lowrider-black/30 sm:grid-cols-3"
         >
           <div className="flex items-center gap-4 border-b border-lowrider-blue/12 p-5 sm:border-r sm:border-b-0">

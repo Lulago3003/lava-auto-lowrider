@@ -254,98 +254,43 @@
         }
       }
 
-      /* El letrero: nombre al centro y carros enjabonados a los lados,
-         como el rótulo físico del local */
-      .sign-board {
-        display: flex;
-        align-items: center;
-        gap: clamp(10px, 3vw, 34px);
+      h1 {
+        max-width: 880px;
         margin-top: 26px;
-        border: 3px solid var(--yellow);
-        border-radius: 22px;
-        background: linear-gradient(160deg, rgba(6, 39, 95, 0.88), rgba(9, 85, 184, 0.72));
-        padding: clamp(20px, 3.4vw, 38px) clamp(18px, 4vw, 48px);
-        box-shadow:
-          0 0 0 6px rgba(6, 39, 95, 0.55),
-          0 30px 80px rgba(8, 16, 31, 0.45),
-          inset 0 0 42px rgba(255, 210, 31, 0.08);
+        font-size: clamp(2.5rem, 5.6vw, 4.6rem);
+        line-height: 1;
+      }
+
+      h1 .accent {
+        color: var(--yellow);
+        text-shadow: 0 4px 0 rgba(6, 39, 95, 0.7);
+      }
+
+      .price-strip {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px 22px;
+        margin-top: 26px;
+        border: 1px solid rgba(255, 210, 31, 0.4);
+        border-radius: 999px;
+        background: rgba(6, 39, 95, 0.72);
+        padding: 12px 26px;
         backdrop-filter: blur(6px);
       }
 
-      .sign-car {
-        width: clamp(84px, 13vw, 175px);
-        height: auto;
-        flex-shrink: 0;
-        filter: drop-shadow(0 12px 22px rgba(8, 16, 31, 0.4));
-      }
-
-      .sign-car.flip {
-        transform: scaleX(-1);
-      }
-
-      .sign-text {
-        display: grid;
-        gap: 6px;
-        justify-items: center;
-      }
-
-      .sign-top {
-        color: var(--cream);
+      .price-strip span {
         font-family: "Oswald", sans-serif;
-        font-size: clamp(1.15rem, 2.6vw, 2rem);
+        font-size: 15px;
         font-weight: 600;
-        letter-spacing: 0.34em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
+        color: rgba(247, 243, 231, 0.88);
       }
 
-      .sign-text h1 {
-        margin: 0;
-        max-width: none;
+      .price-strip strong {
         color: var(--yellow);
-        font-size: clamp(2.5rem, 7vw, 5.4rem);
-        line-height: 0.94;
-        text-shadow:
-          0 3px 0 rgba(6, 39, 95, 0.85),
-          0 14px 34px rgba(8, 16, 31, 0.5);
-      }
-
-      .sign-sub {
-        margin-top: 4px;
-        color: rgba(247, 243, 231, 0.85);
-        font-family: "Oswald", sans-serif;
-        font-size: clamp(0.8rem, 1.4vw, 1.02rem);
-        font-weight: 600;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-      }
-
-      .hero-corner {
-        position: absolute;
-        right: max(24px, calc((100vw - 1180px) / 2));
-        bottom: 46px;
-        z-index: 1;
-        display: grid;
-        gap: 4px;
-        border-left: 6px solid var(--yellow);
-        background: rgba(6, 39, 95, 0.84);
-        padding: 18px 22px;
-        color: var(--cream);
-        box-shadow: 0 24px 64px rgba(8, 16, 31, 0.24);
-      }
-
-      .hero-corner span {
-        color: var(--yellow);
-        font-family: "Oswald", sans-serif;
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 1;
-        text-transform: uppercase;
-      }
-
-      .hero-corner strong {
-        font-size: 12px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
       }
 
       .eyebrow {
@@ -1102,10 +1047,6 @@
           grid-template-columns: 1fr;
         }
 
-        .hero-corner {
-          display: none;
-        }
-
         .trust-item {
           border-right: 0;
           border-bottom: 1px solid var(--line);
@@ -1151,23 +1092,19 @@
           min-height: auto;
         }
 
-        .sign-board {
-          flex-direction: column;
-          gap: 14px;
-          padding: 22px 18px;
+        h1 {
+          font-size: clamp(2.1rem, 10vw, 2.8rem);
+          line-height: 1.04;
+        }
+
+        .price-strip {
           width: 100%;
+          border-radius: 18px;
+          padding: 14px 16px;
         }
 
-        .sign-car {
-          width: 128px;
-        }
-
-        .sign-car.flip {
-          display: none;
-        }
-
-        .sign-text h1 {
-          font-size: clamp(2.3rem, 12vw, 3rem);
+        .price-strip span {
+          font-size: 13px;
         }
 
         .lead {
@@ -1247,87 +1184,22 @@
           <span class="bubble" style="--x: 93%; --s: 20px; --d: 13s; --delay: 5s"></span>
         </div>
         <div class="wrap hero-inner">
-          <span class="eyebrow">Arraij&aacute;n &middot; Panam&aacute; Oeste</span>
-          <div class="sign-board">
-            <svg class="sign-car" viewBox="0 0 210 130" role="img" aria-label="Carro enjabonado">
-              <g fill="#eef7ff">
-                <circle cx="62" cy="36" r="14" />
-                <circle cx="84" cy="27" r="17" />
-                <circle cx="108" cy="23" r="15" />
-                <circle cx="132" cy="28" r="16" />
-                <circle cx="152" cy="37" r="12" />
-              </g>
-              <g fill="#ffffff" opacity="0.92">
-                <circle cx="72" cy="31" r="8" />
-                <circle cx="97" cy="21" r="9" />
-                <circle cx="122" cy="23" r="8" />
-                <circle cx="144" cy="31" r="7" />
-              </g>
-              <circle cx="40" cy="22" r="5" fill="#ffffff" opacity="0.75" />
-              <circle cx="172" cy="18" r="4" fill="#ffffff" opacity="0.65" />
-              <circle cx="184" cy="42" r="6" fill="#eef7ff" opacity="0.7" />
-              <path
-                d="M20 90 q2 -22 27 -26 l17 -3 q13 -22 43 -22 h20 q26 0 38 20 l7 4 q21 4 23 23 l1 8 q0 6 -8 6 h-161 q-7 0 -7 -6 z"
-                fill="#0a78e3"
-                stroke="#06275f"
-                stroke-width="4"
-              />
-              <path d="M73 60 q9 -15 32 -15 h11 q17 0 25 14 z" fill="#dff6ff" stroke="#06275f" stroke-width="3" />
-              <rect x="22" y="74" width="166" height="7" rx="3.5" fill="#ffd21f" opacity="0.9" />
-              <circle cx="62" cy="98" r="17" fill="#08101f" stroke="#d7e5f5" stroke-width="4" />
-              <circle cx="62" cy="98" r="6" fill="#ffd21f" />
-              <circle cx="154" cy="98" r="17" fill="#08101f" stroke="#d7e5f5" stroke-width="4" />
-              <circle cx="154" cy="98" r="6" fill="#ffd21f" />
-              <circle cx="98" cy="120" r="4" fill="#dff6ff" opacity="0.8" />
-              <circle cx="118" cy="124" r="3" fill="#dff6ff" opacity="0.6" />
-            </svg>
-            <div class="sign-text">
-              <span class="sign-top">Lava Auto</span>
-              <h1>Lowrider</h1>
-              <span class="sign-sub">Lavado fuerte &middot; Brillo de calle</span>
-            </div>
-            <svg class="sign-car flip" viewBox="0 0 210 130" aria-hidden="true">
-              <g fill="#eef7ff">
-                <circle cx="62" cy="36" r="14" />
-                <circle cx="84" cy="27" r="17" />
-                <circle cx="108" cy="23" r="15" />
-                <circle cx="132" cy="28" r="16" />
-                <circle cx="152" cy="37" r="12" />
-              </g>
-              <g fill="#ffffff" opacity="0.92">
-                <circle cx="72" cy="31" r="8" />
-                <circle cx="97" cy="21" r="9" />
-                <circle cx="122" cy="23" r="8" />
-                <circle cx="144" cy="31" r="7" />
-              </g>
-              <circle cx="40" cy="22" r="5" fill="#ffffff" opacity="0.75" />
-              <circle cx="172" cy="18" r="4" fill="#ffffff" opacity="0.65" />
-              <circle cx="184" cy="42" r="6" fill="#eef7ff" opacity="0.7" />
-              <path
-                d="M20 90 q2 -22 27 -26 l17 -3 q13 -22 43 -22 h20 q26 0 38 20 l7 4 q21 4 23 23 l1 8 q0 6 -8 6 h-161 q-7 0 -7 -6 z"
-                fill="#0a78e3"
-                stroke="#06275f"
-                stroke-width="4"
-              />
-              <path d="M73 60 q9 -15 32 -15 h11 q17 0 25 14 z" fill="#dff6ff" stroke="#06275f" stroke-width="3" />
-              <rect x="22" y="74" width="166" height="7" rx="3.5" fill="#ffd21f" opacity="0.9" />
-              <circle cx="62" cy="98" r="17" fill="#08101f" stroke="#d7e5f5" stroke-width="4" />
-              <circle cx="62" cy="98" r="6" fill="#ffd21f" />
-              <circle cx="154" cy="98" r="17" fill="#08101f" stroke="#d7e5f5" stroke-width="4" />
-              <circle cx="154" cy="98" r="6" fill="#ffd21f" />
-              <circle cx="98" cy="120" r="4" fill="#dff6ff" opacity="0.8" />
-              <circle cx="118" cy="124" r="3" fill="#dff6ff" opacity="0.6" />
-            </svg>
-          </div>
+          <span class="eyebrow">Arraij&aacute;n &middot; Panam&aacute; Oeste &middot; Calle 11 de Octubre</span>
+          <h1>Tu carro brillando <span class="accent">desde $5</span>. Sin perder tu tiempo.</h1>
           <p class="lead">
-            En Lava Auto Lowrider el carro entra sucio y sale con presencia: espuma intensa,
-            llantas con brillo e interior atendido. Y mientras esperas, c&oacute;rtate el cabello
-            en la barber&iacute;a de al lado o come algo cerca. Todo en una sola parada.
+            Lavado a mano con espuma intensa, llantas con brillo e interior atendido.
+            Y mientras esperas: barber&iacute;a al lado, comida cerca y tus vueltas en la misma calle.
           </p>
           <div class="hero-actions">
             <a class="pill pill-yellow" href="https://wa.me/5073896698?text=Hola%2C%20quiero%20agendar%20un%20lavado%20para%20mi%20carro">Agendar por WhatsApp</a>
-            <a class="pill pill-outline" href="https://www.google.com/maps/place/Lava+Auto+Lowrider/@8.9391428,-79.64208,19.64z">Google Maps</a>
-            <a class="pill pill-outline" href="https://waze.com/ul?ll=8.9391428,-79.64208&amp;navigate=yes">Waze</a>
+            <a class="pill pill-outline" href="#servicios">Ver precios</a>
+            <a class="pill pill-outline" href="#ubicacion">C&oacute;mo llegar</a>
+          </div>
+          <div class="price-strip">
+            <span>Express <strong>$5</strong></span>
+            <span>Completo <strong>$8</strong></span>
+            <span>Brillo y cera <strong>$12</strong></span>
+            <span>Detailing <strong>$25</strong></span>
           </div>
           <div class="trust">
             <div class="trust-item"><div class="trust-title">Fotos reales</div><small>local, espuma y motor visibles</small></div>
@@ -1335,7 +1207,6 @@
             <div class="trust-item"><div class="trust-title">Turno r&aacute;pido</div><small>confirma por WhatsApp antes de llegar</small></div>
           </div>
         </div>
-        <div class="hero-corner" aria-hidden="true"><span>Desde $5</span><strong>agenda hoy</strong></div>
       </section>
 
       <div class="marquee" aria-hidden="true">
